@@ -1,0 +1,244 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - MEDIA QUERIES FOR TABLET & MOBILE
+   Project: ThreadCraft - Premium T-Shirt Store
+   ========================================================================== */
+
+/* --- TABLETS & SMALL LAPTOPS (max-width: 992px) --- */
+@media (max-width: 992px) {
+  /* Navigation */
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 74px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 74px);
+    background-color: var(--bg-surface);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+    border-right: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    transition: left 0.3s ease;
+    z-index: 99;
+  }
+
+  .nav-menu.open {
+    left: 0;
+  }
+
+  /* Hero Banner (Edge-to-Edge Full Bleed) */
+  .hero-banner-section {
+    padding: 0;
+  }
+
+  .hero-banner-frame {
+    border-radius: 0;
+  }
+
+  .hero-banner-img {
+    max-height: 460px;
+    min-height: 280px;
+  }
+
+  /* Product Grid */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  /* High Resolution Technologies Responsive Additions */
+  .value-props-section {
+    background-attachment: scroll;
+    padding: 3.5rem 0;
+  }
+
+  .value-props-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Showcase 3D Coverflow Tablet Adjustments */
+  .showcase-3d-stage {
+    height: 250px;
+  }
+
+  .showcase-3d-card {
+    width: 350px;
+    height: 180px;
+    margin-top: -90px;
+    margin-left: -175px;
+  }
+
+  .showcase-3d-card.pos-center {
+    transform: translate3d(0, 0, 60px) scale(1.08);
+  }
+
+  .showcase-3d-card.pos-left {
+    transform: translate3d(-220px, 0, -20px) scale(0.82) rotateY(10deg);
+  }
+
+  .showcase-3d-card.pos-right {
+    transform: translate3d(220px, 0, -20px) scale(0.82) rotateY(-10deg);
+  }
+
+  .slider-nav-btn.prev-btn {
+    left: 16px;
+  }
+
+  .slider-nav-btn.next-btn {
+    right: 16px;
+  }
+
+  .printable-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .workflow-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .teal-client-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  /* Category Grid */
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Shop Layout */
+  .shop-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  /* Single Product */
+  .product-single-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Checkout Layout */
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- MOBILE SCREENS (max-width: 640px) --- */
+@media (max-width: 640px) {
+  /* Hero Banner (Edge-to-Edge Full Bleed) */
+  .hero-banner-section {
+    padding: 0;
+  }
+
+  .hero-banner-frame {
+    border-radius: 0;
+  }
+
+  .hero-banner-img {
+    max-height: 280px;
+    min-height: 200px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  /* Showcase 3D Coverflow Mobile Adjustments */
+  .showcase-3d-stage-wrapper {
+    padding: 1.5rem 0.5rem 1.75rem;
+    border-radius: 22px;
+  }
+
+  .showcase-3d-stage {
+    height: 195px;
+  }
+
+  .showcase-3d-card {
+    width: 230px;
+    height: 140px;
+    margin-top: -70px;
+    margin-left: -115px;
+    border-radius: 14px;
+  }
+
+  .showcase-3d-card.pos-center {
+    transform: translate3d(0, 0, 40px) scale(1.05);
+  }
+
+  .showcase-3d-card.pos-left {
+    transform: translate3d(-105px, 0, -15px) scale(0.74) rotateY(8deg);
+    opacity: 0.55;
+  }
+
+  .showcase-3d-card.pos-right {
+    transform: translate3d(105px, 0, -15px) scale(0.74) rotateY(-8deg);
+    opacity: 0.55;
+  }
+
+  .slider-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-nav-btn.prev-btn {
+    left: 8px;
+  }
+
+  .slider-nav-btn.next-btn {
+    right: 8px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .printable-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .process-actions .btn {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-table th, 
+  .cart-table td {
+    padding: var(--space-sm);
+  }
+}

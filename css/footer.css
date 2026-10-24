@@ -1,0 +1,267 @@
+/* ==========================================================================
+   FOOTER.CSS - HIGH RESOLUTION TECHNOLOGIES FOOTER STYLES
+   Project: High Resolution Technologies - E-Commerce Storefront
+   ========================================================================== */
+site-footer {
+  display: block;
+  position: relative;
+}
+
+.site-footer {
+  position: relative;
+  background-color: #121417;
+  color: #94a3b8;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+
+/* Botanical Leaf Accent on Bottom Left (As seen in Reference Design) */
+.footer-leaf-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.75;
+  mix-blend-mode: lighten;
+  filter: contrast(1.15) brightness(0.9);
+}
+
+.footer-leaf-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom left;
+  display: block;
+}
+
+.footer-content-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+  align-items: flex-start;
+}
+
+/* Col 1: Brand & About */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand-text {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col p {
+  color: #8b96a5;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Media Links */
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.footer-social-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Quicklinks list */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links li a {
+  color: #8b96a5;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.footer-links li a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+.footer-links .chevron {
+  font-weight: bold;
+  color: #0d9488;
+  font-size: 0.95rem;
+}
+
+/* QR Code */
+.footer-qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-qr-wrap {
+  display: inline-block;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.footer-qr-img {
+  width: 125px;
+  height: 125px;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-qr-subtext {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* Address & Contact */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: #8b96a5;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.footer-contact-item a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-item a:hover {
+  color: #ffffff;
+}
+
+.footer-contact-icon {
+  flex-shrink: 0;
+  color: #0d9488;
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+  background-color: #0c0e10;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.84rem;
+  color: #64748b;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-legal-links a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+  color: #94a3b8;
+}
+
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-leaf-accent {
+    width: 180px;
+    height: 180px;
+    opacity: 0.5;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

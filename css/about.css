@@ -1,0 +1,294 @@
+/* ==========================================================================
+   ABOUT.CSS - HIGH RESOLUTION TECHNOLOGIES (STRICT AUTHENTIC CONTENT ONLY)
+   Modern, Luxury, High-End Presentation of Original Archived Page
+   ========================================================================== */
+
+/* --- 1. BREADCRUMBS --- */
+.about-breadcrumb-bar {
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  padding: 1.15rem 0;
+  font-size: 0.9rem;
+}
+
+.about-breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.about-breadcrumb-inner a {
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.about-breadcrumb-inner a:hover {
+  color: var(--accent);
+}
+
+.about-breadcrumb-inner span.sep {
+  color: #94a3b8;
+}
+
+/* --- 2. TOP SECTION: ONE TREE MULTIPLE SOLUTIONS & HIGH RESOLUTION TECHNOLOGIES --- */
+.about-tree-section {
+  padding: 4.5rem 0 5rem;
+  background: #ffffff;
+}
+
+.about-main-headline {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.about-main-headline::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.about-tree-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Left: Golden Tree Visual Frame */
+.about-tree-frame {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f8fafc 80%, #f1f5f9 100%);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  border-radius: 24px;
+  padding: 1.25rem;
+  box-shadow: 0 25px 60px -15px rgba(13, 148, 136, 0.16),
+              0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.about-tree-frame:hover {
+  transform: translateY(-5px);
+  border-color: rgba(13, 148, 136, 0.45);
+  box-shadow: 0 35px 75px -15px rgba(13, 148, 136, 0.22);
+}
+
+.about-tree-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right: High Resolution Technologies Text */
+.about-story-col {
+  padding-left: 0.5rem;
+}
+
+.about-story-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.about-story-title .highlight-teal {
+  color: var(--accent);
+}
+
+.about-title-underline {
+  width: 70px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.about-story-p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.85;
+  margin-bottom: 1.6rem;
+}
+
+.about-story-p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- 3. BOTTOM SECTION: MORE ABOUT ME & CUSTOMIZED OUTPUT PRODUCT LEVELS --- */
+.about-details-section {
+  padding: 5rem 0 5.5rem;
+  background: #f8fafc;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-details-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left: More About Me (2 Columns of text exactly like screenshot) */
+.more-about-wrap h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.more-about-wrap h2 .highlight-teal {
+  color: var(--accent);
+}
+
+.more-about-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 2.25rem;
+}
+
+.more-about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem;
+}
+
+.more-about-col p {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.82;
+  margin-bottom: 1.35rem;
+}
+
+.more-about-col p:last-child {
+  margin-bottom: 0;
+}
+
+/* Right: Customized Output Product Levels */
+.levels-wrap h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.levels-wrap h2 .highlight-teal {
+  color: var(--accent);
+}
+
+.levels-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+}
+
+.levels-meters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.level-meter-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.level-meter-card:hover {
+  border-color: rgba(13, 148, 136, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(13, 148, 136, 0.1);
+}
+
+.level-meter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.level-meter-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.level-meter-score {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #0f172a;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+.level-meter-bar {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.level-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 100%);
+  border-radius: var(--radius-full);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+  .about-tree-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-details-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-main-headline {
+    font-size: 2.15rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-story-title,
+  .more-about-wrap h2,
+  .levels-wrap h2 {
+    font-size: 1.75rem;
+  }
+
+  .more-about-columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-tree-frame {
+    padding: 0.75rem;
+  }
+}

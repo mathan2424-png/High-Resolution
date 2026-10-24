@@ -1,0 +1,28 @@
+# Dependencies & Packages
+node_modules/
+.npm/
+
+# Logs & Debug
+logs
+*.log
+npm-debug.log*
+
+# OS Generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment & Build Output
+dist/
+build/
+.env
+.env.local

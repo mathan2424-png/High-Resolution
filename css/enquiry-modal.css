@@ -1,0 +1,546 @@
+/* ==========================================================================
+   HIGH RESOLUTION TECHNOLOGIES - ENQUIRY MODAL (PREMIUM POPUP)
+   ========================================================================== */
+
+/* Prevent scrolling when modal is active */
+body.modal-open {
+  overflow: hidden !important;
+  padding-right: 0px;
+}
+
+/* Modal Overlay Backdrop with Glassmorphism */
+.enquiry-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enquiry-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Window Container */
+.enquiry-modal-box {
+  width: 100%;
+  max-width: 540px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh;
+}
+
+.enquiry-modal-overlay.active .enquiry-modal-box {
+  transform: scale(1) translateY(0);
+}
+
+/* Modal Header: Radiant Cyan / Sky Theme matching user reference */
+.enquiry-modal-header {
+  background: linear-gradient(135deg, #00d2ff 0%, #0091d5 100%);
+  padding: 0.95rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 180, 216, 0.25);
+  flex-shrink: 0;
+}
+
+.enquiry-modal-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-category-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.enquiry-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.25;
+}
+
+.enquiry-modal-title span.product-target {
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 4px;
+}
+
+/* Modern Close Button matching reference with enhanced UX */
+.enquiry-modal-close {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.enquiry-modal-close:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateY(-1px);
+}
+
+.enquiry-modal-close:active {
+  transform: scale(0.96);
+}
+
+/* Modal Body Content */
+.enquiry-modal-body {
+  padding: 1.15rem 1.4rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: calc(88vh - 65px);
+}
+
+.enquiry-modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.enquiry-modal-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.enquiry-modal-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Selected Product Summary Ribbon */
+.enquiry-product-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.enquiry-preview-thumb-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.enquiry-preview-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.enquiry-preview-details {
+  flex: 1;
+}
+
+.enquiry-preview-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.enquiry-preview-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1px;
+}
+
+.enquiry-preview-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #0d9488;
+  background: #ccfbf1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.enquiry-preview-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0d9488;
+  display: inline-block;
+}
+
+/* Form Styles */
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .form-row-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-label span.req {
+  color: #ef4444;
+}
+
+.enquiry-input,
+.enquiry-textarea {
+  width: 100%;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 9px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.enquiry-input::placeholder,
+.enquiry-textarea::placeholder {
+  color: #94a3b8;
+  font-size: 0.86rem;
+}
+
+.enquiry-input:hover,
+.enquiry-textarea:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.enquiry-input:focus,
+.enquiry-textarea:focus {
+  background: #ffffff;
+  border-color: #00b4d8;
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.16);
+}
+
+.enquiry-textarea {
+  resize: vertical;
+  min-height: 65px;
+  line-height: 1.45;
+}
+
+/* Validation Feedback & Error States */
+.enquiry-input.is-invalid,
+.enquiry-textarea.is-invalid {
+  border-color: #ef4444 !important;
+  background-color: #fff5f5 !important;
+}
+
+.enquiry-input.is-invalid:focus,
+.enquiry-textarea.is-invalid:focus {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+.enquiry-input.is-valid,
+.enquiry-textarea.is-valid {
+  border-color: #10b981 !important;
+}
+
+.form-error-msg {
+  display: none;
+  font-size: 0.74rem;
+  color: #ef4444;
+  font-weight: 600;
+  margin-top: 3px;
+  line-height: 1.25;
+}
+
+.form-error-msg.visible {
+  display: block;
+  animation: modalErrorIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalErrorIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Submit Action Button */
+.enquiry-submit-btn {
+  background: #1e293b;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  margin-top: 0.35rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.enquiry-submit-btn:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+}
+
+.enquiry-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Success Confirmation State */
+.enquiry-success-view {
+  display: none;
+  text-align: center;
+  padding: 1.5rem 1rem 1rem;
+}
+
+.enquiry-success-icon-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.2);
+}
+
+.enquiry-success-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.enquiry-success-desc {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto 1.5rem;
+}
+
+.enquiry-done-btn {
+  background: linear-gradient(135deg, #00d2ff 0%, #0091d5 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.enquiry-done-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 180, 216, 0.35);
+}
+
+/* ==========================================================================
+   Stationery Product Grid & Card Styling (Matching user reference layout)
+   ========================================================================== */
+.stationery-section-title-wrap {
+  text-align: center;
+  margin: 1.5rem 0 3rem;
+}
+
+.stationery-section-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.stationery-section-title span {
+  color: #0d9488;
+}
+
+.stationery-title-line {
+  width: 50px;
+  height: 3px;
+  background: #0d9488;
+  border-radius: 2px;
+  margin: 0.6rem auto 0;
+}
+
+/* Clickable product card styling for stationery page */
+.stationery-product-card {
+  background: #ffffff;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem 1rem;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.stationery-product-card:hover {
+  border-color: #0d9488;
+  border-style: solid;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px -4px rgba(13, 148, 136, 0.16);
+}
+
+.stationery-card-image-stage {
+  width: 100%;
+  aspect-ratio: 1 / 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.stationery-card-img {
+  max-width: 85%;
+  max-height: 160px;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06));
+}
+
+.stationery-product-card:hover .stationery-card-img {
+  transform: scale(1.08);
+}
+
+.stationery-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.stationery-card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.stationery-product-card:hover .stationery-card-title {
+  color: #0d9488;
+}
+
+.stationery-enquiry-badge {
+  background: #0d9488;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.2);
+  transition: all 0.2s ease;
+}
+
+.stationery-product-card:hover .stationery-enquiry-badge {
+  background: #0f766e;
+  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.35);
+}
+
+.stationery-corner-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 22px solid #0d9488;
+  border-left: 22px solid transparent;
+  pointer-events: none;
+  transition: border-bottom-color 0.2s;
+}
+
+.stationery-product-card:hover .stationery-corner-triangle {
+  border-bottom-color: #0f766e;
+}
+
