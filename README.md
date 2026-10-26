@@ -10,23 +10,22 @@ ecommerce-website/
 │
 ├── index.html              # Homepage (Hero Drop, Value Badges, Trending Products, Categories, Newsletter)
 ├── shop.html               # Product Catalog / Archive (Filter sidebar, size selector, sorting, pagination)
-├── product-details.html    # Single Product Detail (Gallery switcher, size buttons, specs table, Add-to-Cart)
-├── cart.html               # Shopping Cart Page (Cart item list, coupon input, subtotal, free shipping bar)
-├── contact.html            # Customer Support & FAQ (Contact form, direct support channels, return policy)
+├── stationery.html         # Corporate Stationery (ID Cards, Lanyards, Mugs, Notebooks, Pens)
+├── custom-design.html      # Custom Design & Bulk Quote Request
+├── contact.html            # Customer Support & FAQ (Contact form, direct support channels)
+├── about.html              # About High Resolution Technologies
 │
 ├── css/
 │   ├── style.css           # Master Stylesheet (Design tokens, Google Fonts, reset, layout, components)
 │   ├── header.css          # Site Header, announcement bar, navigation, mobile toggle
 │   ├── footer.css          # Exact High Resolution Technologies footer styles
 │   ├── shop.css            # Shop layout, sidebar filters, product cards, category cards
-│   ├── product-details.css # Product detail gallery, thumbnail switcher, specs table
-│   ├── cart.css            # Cart table, coupon box, order summary box
+│   ├── enquiry-modal.css   # Enquiry modal, quotation popup, interactive hover effects
 │   └── responsive.css      # Tablet (max-width: 992px) & Mobile (max-width: 640px) Media Queries
 │
 ├── js/
 │   ├── main.js             # Core script (Mobile navbar toggle, header scroll)
-│   ├── products.js         # Product detail gallery thumbnail switcher & size selection
-│   ├── cart.js             # Cart quantity increment/decrement & coupon handlers
+│   ├── enquiry-modal.js    # Enquiry modal handlers & form submission
 │   └── validation.js       # Contact form & input validation
 │
 ├── images/
@@ -57,11 +56,10 @@ ecommerce-website/
 | Old WordPress / WooCommerce Component | Static HTML/CSS Equivalent File | Key Improvements & Changes |
 | :--- | :--- | :--- |
 | `front-page.php` / Elementor Home Page | [index.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/index.html) | Zero database queries, instant 100/100 Google Lighthouse score |
-| `woocommerce/archive-product.php` | [shop.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/shop.html) | Clean sidebar category filtering, fast layout without slow PHP hooks |
-| `woocommerce/single-product.php` | [product-details.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/product-details.html) | Pure CSS/HTML product gallery with instant thumbnail switching |
-| `woocommerce/cart/cart.php` | [cart.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/cart.html) | Clean, frictionless cart table with instant free shipping calculations |
+| `woocommerce/archive-product.php` | [shop.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/shop.html) | Direct interactive enquiry modal trigger for all 17 merchandise categories |
+| Corporate Stationery / Merchandise | [stationery.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/stationery.html) | Interactive stationery catalog with quote enquiry integration |
 | Contact Form 7 / WPForms | [contact.html](file:///c:/Users/Dell/Documents/T-Shrite-Ecommerce/contact.html) | Lightweight HTML form with client-side JS validation |
-| `wp-content/themes/{theme}/style.css` | `css/style.css`, `header.css`, `footer.css`, `shop.css`, `cart.css` | Clean modular separation for easy maintenance and performance |
+| `wp-content/themes/{theme}/style.css` | `css/style.css`, `header.css`, `footer.css`, `shop.css`, `enquiry-modal.css` | Clean modular separation for easy maintenance and performance |
 | `wp-content/uploads/` | `images/logo/`, `images/banners/`, `images/products/`, `images/icons/` | Clean asset organization for high-resolution graphics and mockups |
 
 ---

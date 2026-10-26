@@ -251,14 +251,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-/* --- 5. HERO BANNER SECTION (Full Width Edge-to-Edge Banner) --- */
+/* --- 5. HERO BANNER SECTION (Full Width Edge-to-Edge Banner with Luxury White Overlay) --- */
 .hero-banner-section {
   width: 100%;
   padding: 0;
   margin: 0;
   position: relative;
   overflow: hidden;
-  background-color: #0f172a;
+  background-color: #f8fafc;
 }
 
 .hero-banner-frame {
@@ -268,25 +268,188 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   border-radius: 0;
   overflow: hidden;
-  box-shadow: none;
-  border: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
 }
 
 .hero-banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 640px;
-  min-height: 360px;
+  height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: right center;
   display: block;
+  z-index: 1;
+}
+
+/* Luxury White Opacity Gradient Overlay - White/Frosted left to preserve text, transparent right for products */
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.91) 36%,
+    rgba(255, 255, 255, 0.58) 64%,
+    rgba(255, 255, 255, 0.12) 85%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-banner-content-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-block: 4.5rem;
+}
+
+.hero-banner-content {
+  max-width: 620px;
+  color: #0f172a;
+}
+
+/* Badge */
+.hero-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 148, 136, 0.08);
+  border: 1.5px solid rgba(13, 148, 136, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0d9488;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.08);
+}
+
+.badge-sparkle {
+  font-size: 0.95rem;
+}
+
+/* Title */
+.hero-banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-banner-title .gradient-text {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 45%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Description */
+.hero-banner-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 2rem;
+  max-width: 560px;
+  font-weight: 500;
+}
+
+/* Action Buttons */
+.hero-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.25rem;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.85rem 1.85rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 25px -4px rgba(13, 148, 136, 0.45);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -4px rgba(13, 148, 136, 0.55);
+  color: #ffffff;
+}
+
+.hero-btn-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.hero-btn-glass {
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.hero-btn-glass:hover {
+  background: #ffffff;
+  border-color: #0d9488;
+  color: #0d9488;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -4px rgba(13, 148, 136, 0.25);
+}
+
+/* Micro Perks */
+.hero-banner-perks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(203, 213, 225, 0.7);
+}
+
+.hero-perk-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
 }
 
 /* --- 6. THREE VALUE PROPOSITION PILLARS --- */
 .value-props-section {
   position: relative;
-  padding: 5.5rem 0;
+  padding: 4.25rem 0;
   background-image: linear-gradient(180deg, rgba(10, 17, 30, 0.78) 0%, rgba(15, 23, 42, 0.72) 50%, rgba(10, 17, 30, 0.8) 100%), url('../images/banners/value-props-bg.jpg');
   background-size: cover;
   background-position: center center;
@@ -299,7 +462,9 @@ h1, h2, h3, h4, h5, h6 {
 .value-props-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
+  gap: 1.25rem;
+  max-width: 900px;
+  margin-inline: auto;
   position: relative;
   z-index: 2;
 }
@@ -309,14 +474,14 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 22px;
-  padding: 2.5rem 1.85rem;
+  border-radius: 16px;
+  padding: 1.35rem 1.15rem 1.35rem;
   text-align: center;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.28),
-              0 8px 18px -4px rgba(15, 23, 42, 0.15),
+  box-shadow: 0 14px 32px -8px rgba(0, 0, 0, 0.22),
+              0 4px 12px -2px rgba(15, 23, 42, 0.12),
               inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
@@ -326,17 +491,17 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, var(--accent) 0%, #2dd4bf 50%, var(--gold) 100%);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
 
 .value-prop-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   background: #ffffff;
-  box-shadow: 0 30px 65px -12px rgba(13, 148, 136, 0.35),
-              0 12px 25px -4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 22px 50px -10px rgba(13, 148, 136, 0.3),
+              0 8px 18px -3px rgba(0, 0, 0, 0.18);
   border-color: rgba(45, 212, 191, 0.6);
 }
 
@@ -345,12 +510,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .value-prop-icon-wrap {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 1.5rem;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.75rem;
   border-radius: 50%;
   background: rgba(13, 148, 136, 0.1);
-  border: 2px solid rgba(13, 148, 136, 0.25);
+  border: 1.5px solid rgba(13, 148, 136, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,27 +523,32 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.value-prop-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
 .value-prop-card:hover .value-prop-icon-wrap {
   background: linear-gradient(135deg, var(--accent) 0%, #0f766e 100%);
   color: #ffffff;
-  transform: scale(1.1) rotate(4deg);
-  box-shadow: 0 10px 25px rgba(13, 148, 136, 0.4);
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.35);
   border-color: transparent;
 }
 
 .value-prop-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #0f172a;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.45rem;
 }
 
 .value-prop-text {
-  font-size: 0.94rem;
+  font-size: 0.82rem;
   color: #475569;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 /* --- 7. AUTO-SCROLLING LUXURY 3D COVERFLOW SHOWCASE (Wider Box, Leaner Height, Inside Buttons) --- */
@@ -991,6 +1161,4 @@ h1, h2, h3, h4, h5, h6 {
 @import url('./header.css');
 @import url('./footer.css');
 @import url('./shop.css');
-@import url('./product-details.css');
-@import url('./cart.css');
 @import url('./responsive.css');

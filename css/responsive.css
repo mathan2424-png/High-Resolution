@@ -31,18 +31,22 @@
     left: 0;
   }
 
-  /* Hero Banner (Edge-to-Edge Full Bleed) */
-  .hero-banner-section {
-    padding: 0;
-  }
-
+  /* Hero Banner Tablet Adjustments */
   .hero-banner-frame {
-    border-radius: 0;
+    min-height: 500px;
   }
 
-  .hero-banner-img {
-    max-height: 460px;
-    min-height: 280px;
+  .hero-banner-content-container {
+    padding-block: 3.5rem;
+  }
+
+  .hero-banner-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.92) 55%,
+      rgba(255, 255, 255, 0.65) 100%
+    );
   }
 
   /* Product Grid */
@@ -54,12 +58,14 @@
   /* High Resolution Technologies Responsive Additions */
   .value-props-section {
     background-attachment: scroll;
-    padding: 3.5rem 0;
+    padding: 2.25rem 0;
   }
 
   .value-props-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    max-width: 420px;
+    margin-inline: auto;
+    gap: 1rem;
   }
 
   /* Showcase 3D Coverflow Tablet Adjustments */
@@ -138,18 +144,38 @@
 
 /* --- MOBILE SCREENS (max-width: 640px) --- */
 @media (max-width: 640px) {
-  /* Hero Banner (Edge-to-Edge Full Bleed) */
-  .hero-banner-section {
-    padding: 0;
-  }
-
+  /* Hero Banner Mobile Adjustments */
   .hero-banner-frame {
-    border-radius: 0;
+    min-height: 520px;
   }
 
-  .hero-banner-img {
-    max-height: 280px;
-    min-height: 200px;
+  .hero-banner-content-container {
+    padding-block: 3rem 2.5rem;
+  }
+
+  .hero-banner-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.93) 65%,
+      rgba(255, 255, 255, 0.8) 100%
+    );
+  }
+
+  .hero-banner-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-banner-actions .hero-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-banner-perks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
   }
 
   .section-title {

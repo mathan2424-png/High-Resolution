@@ -419,52 +419,121 @@ body.modal-open {
 /* ==========================================================================
    Stationery Product Grid & Card Styling (Matching user reference layout)
    ========================================================================== */
+/* ==========================================================================
+   Stationery Product Grid & Card Styling (Enhanced Attractive Hover Effects)
+   ========================================================================== */
 .stationery-section-title-wrap {
   text-align: center;
   margin: 1.5rem 0 3rem;
+  cursor: default;
 }
 
 .stationery-section-title {
   font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-weight: 800;
-  color: #334155;
+  color: #1e293b;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.stationery-section-title-wrap:hover .stationery-section-title {
+  letter-spacing: 0.06em;
+  transform: translateY(-2px);
 }
 
 .stationery-section-title span {
   color: #0d9488;
+  transition: all 0.35s ease;
+}
+
+.stationery-section-title-wrap:hover .stationery-section-title span {
+  color: #0f766e;
+  text-shadow: 0 0 20px rgba(13, 148, 136, 0.35);
 }
 
 .stationery-title-line {
   width: 50px;
-  height: 3px;
-  background: #0d9488;
-  border-radius: 2px;
-  margin: 0.6rem auto 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 100%);
+  border-radius: 3px;
+  margin: 0.75rem auto 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Clickable product card styling for stationery page */
+.stationery-section-title-wrap:hover .stationery-title-line {
+  width: 100px;
+  box-shadow: 0 2px 12px rgba(13, 148, 136, 0.5);
+}
+
+/* Clickable product card styling for stationery page with rich attractive hover animations */
 .stationery-product-card {
   background: #ffffff;
-  border: 1.5px dashed #cbd5e1;
-  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1rem 1rem;
+  padding: 1.25rem 1rem 1.1rem;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+/* Animated Top Accent Border */
+.stationery-product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 50%, #d97706 100%);
+  opacity: 0;
+  transform: scaleX(0.2);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  z-index: 5;
+}
+
+/* Light Sheen / Shimmer Sweep on Hover */
+.stationery-product-card::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -130%;
+  width: 70%;
+  height: 220%;
+  background: linear-gradient(
+    105deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(13, 148, 136, 0.15) 55%,
+    transparent 75%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  z-index: 4;
 }
 
 .stationery-product-card:hover {
-  border-color: #0d9488;
-  border-style: solid;
-  transform: translateY(-6px);
-  box-shadow: 0 16px 28px -4px rgba(13, 148, 136, 0.16);
+  border-color: rgba(13, 148, 136, 0.75);
+  transform: translateY(-9px) scale(1.02);
+  box-shadow: 0 22px 42px -10px rgba(13, 148, 136, 0.28),
+              0 8px 20px -4px rgba(15, 23, 42, 0.08),
+              inset 0 0 0 1px rgba(45, 212, 191, 0.25);
+}
+
+.stationery-product-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.stationery-product-card:hover::after {
+  left: 170%;
+  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stationery-card-image-stage {
@@ -473,19 +542,29 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.stationery-product-card:hover .stationery-card-image-stage {
+  background: radial-gradient(circle at center, rgba(13, 148, 136, 0.12) 0%, rgba(241, 245, 249, 0.6) 65%, #f8fafc 100%);
 }
 
 .stationery-card-img {
-  max-width: 85%;
-  max-height: 160px;
+  max-width: 84%;
+  max-height: 155px;
   object-fit: contain;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.06));
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
 }
 
 .stationery-product-card:hover .stationery-card-img {
-  transform: scale(1.08);
+  transform: scale(1.14) translateY(-6px);
+  filter: drop-shadow(0 16px 22px rgba(13, 148, 136, 0.32)) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .stationery-card-footer {
@@ -494,6 +573,8 @@ body.modal-open {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .stationery-card-title {
@@ -503,7 +584,7 @@ body.modal-open {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin: 0;
-  transition: color 0.2s;
+  transition: color 0.3s ease;
 }
 
 .stationery-product-card:hover .stationery-card-title {
@@ -511,21 +592,42 @@ body.modal-open {
 }
 
 .stationery-enquiry-badge {
-  background: #0d9488;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
   color: #ffffff;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 4px;
-  display: inline-block;
-  letter-spacing: 0.03em;
-  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.2);
-  transition: all 0.2s ease;
+  padding: 5px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.stationery-enquiry-badge::after {
+  content: '→';
+  font-size: 0.85rem;
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-4px);
+  transition: all 0.3s ease;
 }
 
 .stationery-product-card:hover .stationery-enquiry-badge {
-  background: #0f766e;
-  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.35);
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.45);
+  letter-spacing: 0.05em;
+  padding-right: 12px;
+}
+
+.stationery-product-card:hover .stationery-enquiry-badge::after {
+  opacity: 1;
+  max-width: 12px;
+  transform: translateX(0);
 }
 
 .stationery-corner-triangle {
@@ -534,13 +636,61 @@ body.modal-open {
   right: 0;
   width: 0;
   height: 0;
-  border-bottom: 22px solid #0d9488;
-  border-left: 22px solid transparent;
+  border-bottom: 24px solid #0d9488;
+  border-left: 24px solid transparent;
   pointer-events: none;
-  transition: border-bottom-color 0.2s;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.85;
+  z-index: 3;
 }
 
 .stationery-product-card:hover .stationery-corner-triangle {
-  border-bottom-color: #0f766e;
+  border-bottom: 32px solid #0d9488;
+  border-left: 32px solid transparent;
+  opacity: 1;
+  filter: drop-shadow(-3px -3px 6px rgba(13, 148, 136, 0.45));
 }
+
+/* --- SHOP & HOME PRODUCT CARDS ENQUIRY STYLING --- */
+.modern-product-card {
+  cursor: pointer;
+}
+
+.card-enquiry-wrap {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-enquiry-badge {
+  background: #f0fdfa;
+  color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  padding: 0.42rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-product-card:hover .card-enquiry-badge {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+}
+
+.printable-card {
+  cursor: pointer;
+}
+
 
