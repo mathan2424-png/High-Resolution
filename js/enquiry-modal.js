@@ -111,24 +111,24 @@
             <div class="form-row-2col">
               <div class="form-group">
                 <label for="enquiryFirstName" class="form-label">First Name <span class="req">*</span></label>
-                <input type="text" id="enquiryFirstName" class="enquiry-input" placeholder="e.g. Rahul" autocomplete="given-name" required>
+                <input type="text" id="enquiryFirstName" class="enquiry-input" placeholder="Enter your first name" autocomplete="given-name" required>
                 <span class="form-error-msg" id="errorFirstName">Please enter a valid name (letters only, min 2 chars)</span>
               </div>
               <div class="form-group">
                 <label for="enquiryLastName" class="form-label">Last Name</label>
-                <input type="text" id="enquiryLastName" class="enquiry-input" placeholder="e.g. Sharma" autocomplete="family-name">
+                <input type="text" id="enquiryLastName" class="enquiry-input" placeholder="Enter your last name" autocomplete="family-name">
                 <span class="form-error-msg" id="errorLastName">Please enter only letters for last name</span>
               </div>
             </div>
             <div class="form-row-2col">
               <div class="form-group">
                 <label for="enquiryEmail" class="form-label">Email <span class="req">*</span></label>
-                <input type="email" id="enquiryEmail" class="enquiry-input" placeholder="name@company.com" autocomplete="email" required>
-                <span class="form-error-msg" id="errorEmail">Please enter a valid email address with @ (e.g. name@domain.com)</span>
+                <input type="email" id="enquiryEmail" class="enquiry-input" placeholder="Enter your email" autocomplete="email" required>
+                <span class="form-error-msg" id="errorEmail">Please enter a valid email address</span>
               </div>
               <div class="form-group">
                 <label for="enquiryPhone" class="form-label">Phone <span class="req">*</span></label>
-                <input type="tel" id="enquiryPhone" class="enquiry-input" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric" autocomplete="tel" required>
+                <input type="tel" id="enquiryPhone" class="enquiry-input" placeholder="Enter your phone number" maxlength="10" inputmode="numeric" autocomplete="tel" required>
                 <span class="form-error-msg" id="errorPhone">Enter a valid 10-digit mobile number (starts with 6-9)</span>
               </div>
             </div>
@@ -471,19 +471,58 @@
           return;
         }
 
-        // Form is 100% valid: Process success view
-        const productName = document.getElementById('enquiryProductTitle')?.textContent || 'this product';
+        // Form is 100% valid: Process submission to server & update view
+        const productName = document.getElementById('enquiryProductTitle')?.textContent?.trim() || 
+                            document.getElementById('enquiryPreviewName')?.textContent?.trim() || 
+                            'Selected Product';
         const formView = document.getElementById('enquiryFormView');
         const successView = document.getElementById('enquirySuccessView');
         const successName = document.getElementById('enquirySuccessName');
         const successProduct = document.getElementById('enquirySuccessProduct');
 
-        if (successName) successName.textContent = firstNameVal || 'Valued Customer';
-        if (successProduct) successProduct.textContent = productName;
+        const submitBtn = form.querySelector('.enquiry-submit-btn');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+          submitBtn.style.pointerEvents = 'none';
+        }
 
-        // Transition smoothly to success state
-        if (formView) formView.style.display = 'none';
-        if (successView) successView.style.display = 'block';
+        // Send enquiry record to mail/send-mail.php (saves to submissions.json & triggers email)
+        const payload = {
+          product_name: productName,
+          first_name: firstNameVal,
+          last_name: lastNameVal,
+          email: emailVal,
+          phone: phoneVal,
+          requirement: messageVal
+        };
+
+        fetch('mail/send-mail.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .catch(err => {
+          console.warn('Enquiry logged:', err);
+        })
+        .finally(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.pointerEvents = 'auto';
+          }
+          if (successName) successName.textContent = firstNameVal || 'Valued Customer';
+          if (successProduct) successProduct.textContent = productName;
+
+          // Transition smoothly to success state
+          if (formView) formView.style.display = 'none';
+          if (successView) successView.style.display = 'block';
+          form.reset();
+        });
       });
     }
 

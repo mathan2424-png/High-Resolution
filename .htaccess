@@ -2,10 +2,11 @@
 # Apache configuration for High Resolution Technologies Storefront
 # ----------------------------------------------------------------------
 
-# 1. Force HTTPS
+# 1. Force HTTPS (Only for live domain, bypass for localhost & local IP)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1|192\.168\.) [NC]
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 

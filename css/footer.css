@@ -221,10 +221,17 @@ site-footer {
 
 .footer-bottom-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.footer-bottom-inner p {
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .footer-legal-links {

@@ -1,0 +1,8 @@
+# ----------------------------------------------------------------------
+# Security: Prevent direct public access to customer submissions data
+# ----------------------------------------------------------------------
+<Files "submissions.json">
+  Order Allow,Deny
+  Deny from all
+  Require all denied
+</Files>

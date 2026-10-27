@@ -485,6 +485,11 @@
   transform: translateX(4px);
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Success Confirmation Banner inside form */
 .contact-success-alert {
   display: none;

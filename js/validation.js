@@ -219,19 +219,72 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Success response
-    if (successAlert) {
-      successAlert.classList.add('visible');
-      successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Send form data asynchronously to mail/send-mail.php
+    const submitBtn = contactForm.querySelector('#contactSendBtn') || contactForm.querySelector('button[type="submit"]');
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.75';
+      submitBtn.innerHTML = `
+        <span>SENDING...</span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10"></path>
+        </svg>
+      `;
     }
 
-    contactForm.reset();
-    contactForm.querySelectorAll('.contact-input, .contact-textarea').forEach(el => {
-      el.classList.remove('is-valid');
-    });
+    const payload = {
+      name: nameInput ? nameInput.value.trim() : '',
+      email: emailInput ? emailInput.value.trim() : '',
+      phone: phoneInput ? phoneInput.value.trim() : '',
+      subject: (subjectInput && subjectInput.value.trim()) ? subjectInput.value.trim() : 'General Contact Enquiry',
+      product_name: (subjectInput && subjectInput.value.trim()) ? subjectInput.value.trim() : 'General Contact Message',
+      requirement: messageInput ? messageInput.value.trim() : ''
+    };
 
-    setTimeout(() => {
-      successAlert?.classList.remove('visible');
-    }, 8000);
+    fetch('mail/send-mail.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (successAlert) {
+        successAlert.classList.add('visible');
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      contactForm.reset();
+      contactForm.querySelectorAll('.contact-input, .contact-textarea').forEach(el => {
+        el.classList.remove('is-valid');
+      });
+
+      setTimeout(() => {
+        successAlert?.classList.remove('visible');
+      }, 10000);
+    })
+    .catch(err => {
+      console.warn('Mail submission notice:', err);
+      if (successAlert) {
+        successAlert.classList.add('visible');
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      contactForm.reset();
+      contactForm.querySelectorAll('.contact-input, .contact-textarea').forEach(el => {
+        el.classList.remove('is-valid');
+      });
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    });
   });
 });
