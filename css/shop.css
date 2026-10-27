@@ -549,24 +549,151 @@
     font-size: 2.2rem;
   }
   .hero-feature-badges {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .shop-toolbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .shop-toolbar-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 0.5rem;
     width: 100%;
-    flex-direction: column;
-    align-items: stretch;
   }
+
+  .hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .feature-icon-box {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 9px;
+    flex-shrink: 0;
+  }
+
+  .feature-icon-box svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .feature-title {
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .feature-sub {
+    font-size: 0.68rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+  /* Breadcrumbs on left & Search bar on right side-by-side in one horizontal row */
+  .shop-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 1.25rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .shop-breadcrumbs {
+    font-size: 0.84rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .shop-toolbar-controls {
+    width: auto;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   .shop-search-bar {
     width: 100%;
+    max-width: 180px;
+    padding: 0.42rem 0.65rem;
+    border-radius: 10px;
+    gap: 6px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   }
+
+  .shop-search-bar svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .shop-search-bar input {
+    font-size: 0.78rem;
+    width: 100%;
+  }
+
+  /* Products in 1 row 2 columns (2-column grid on mobile) */
   .modern-products-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .modern-product-card {
+    border-radius: 14px;
+  }
+
+  .card-image-box {
+    padding: 1rem 0.65rem 0.75rem;
+    aspect-ratio: 1 / 0.95;
+    min-height: 120px;
+  }
+
+  .card-img {
+    max-height: 110px;
+  }
+
+  .card-body {
+    padding: 0.75rem 0.45rem 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .card-title {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
+  .card-enquiry-badge {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.72rem;
+    gap: 4px;
+  }
+
+  /* Stationery Products in 2 columns */
+  .stationery-product-card {
+    padding: 0.75rem 0.5rem 0.7rem;
+    border-radius: 14px;
+  }
+
+  .stationery-card-image-stage {
+    aspect-ratio: 1 / 0.92;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .stationery-card-img {
+    max-height: 95px;
+  }
+
+  .stationery-card-title {
+    font-size: 0.74rem;
+  }
+
+  .stationery-enquiry-badge {
+    padding: 0.26rem 0.55rem;
+    font-size: 0.7rem;
   }
 }

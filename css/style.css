@@ -349,10 +349,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-banner-title .gradient-text {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 45%, #d97706 100%);
+  color: #0d9488;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #b45309 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline;
+  text-shadow: none !important;
+  display: inline-block;
 }
 
 /* Description */
@@ -737,6 +740,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Glassmorphic Navigation Buttons - PLACED SAFELY INSIDE THE BOX */
+.slider-nav-controls {
+  display: contents;
+}
+
 .slider-nav-btn {
   position: absolute;
   top: 50%;
@@ -850,6 +857,9 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .printable-card::before {
@@ -1021,7 +1031,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- 9. EXPLORE. DESIGN. CREATE. PROCESS SECTION --- */
 .process-section {
-  padding: 5rem 0;
+  padding: 2rem 0;
   background-color: var(--bg-body);
   position: relative;
   text-align: center;

@@ -11,7 +11,7 @@ site-footer {
   position: relative;
   background-color: #121417;
   color: #94a3b8;
-  padding-top: 4.5rem;
+  padding-top: 1.5rem;
   padding-bottom: 0;
   font-size: 0.9rem;
   overflow: hidden;
@@ -62,7 +62,7 @@ site-footer {
 }
 
 .footer-brand-logo {
-  height: 44px;
+  height: 64px;
   width: auto;
   object-fit: contain;
 }
@@ -252,14 +252,43 @@ site-footer {
 
 @media (max-width: 640px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.25rem;
   }
+
+  .footer-grid .footer-col:nth-child(1),
+  .footer-grid .footer-col:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid .footer-col:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .footer-grid .footer-col:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 1rem;
+  }
+
+  .footer-qr-img {
+    width: 115px;
+    height: 115px;
+    max-width: 100%;
+  }
+
+  .footer-qr-wrap {
+    padding: 6px;
+  }
+
   .footer-leaf-accent {
     width: 180px;
     height: 180px;
     opacity: 0.5;
   }
+
   .footer-bottom-inner {
     flex-direction: column;
     text-align: center;

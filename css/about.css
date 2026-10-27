@@ -129,7 +129,7 @@
 
 /* --- 3. BOTTOM SECTION: MORE ABOUT ME & CUSTOMIZED OUTPUT PRODUCT LEVELS --- */
 .about-details-section {
-  padding: 5rem 0 5.5rem;
+  padding: 1rem 0 1.5rem;
   background: #f8fafc;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -280,7 +280,11 @@
   .about-story-title,
   .more-about-wrap h2,
   .levels-wrap h2 {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
+  }
+
+  .levels-underline {
+    margin-bottom: 1.25rem;
   }
 
   .more-about-columns {
@@ -290,5 +294,85 @@
 
   .about-tree-frame {
     padding: 0.75rem;
+  }
+
+  /* Level Meters Mobile Card Styling (Matching UI Mockup) */
+  .levels-meters-list {
+    gap: 0.85rem;
+  }
+
+  .level-meter-card {
+    padding: 0.95rem 1.15rem;
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    background: #ffffff;
+  }
+
+  .level-meter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .level-meter-name {
+    font-size: clamp(0.82rem, 3.8vw, 0.95rem);
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+  }
+
+  .level-meter-score {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: #0f172a;
+    padding: 0.22rem 0.6rem;
+    border-radius: 6px;
+    flex-shrink: 0;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .level-meter-bar {
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .level-meter-fill {
+    height: 100%;
+    background: #0d9488;
+    border-radius: 9999px;
+  }
+}
+
+@media (max-width: 380px) {
+  .levels-meters-list {
+    gap: 0.7rem;
+  }
+
+  .level-meter-card {
+    padding: 0.8rem 0.95rem;
+    border-radius: 14px;
+  }
+
+  .level-meter-name {
+    font-size: 0.78rem;
+  }
+
+  .level-meter-score {
+    font-size: 0.74rem;
+    padding: 0.18rem 0.45rem;
+  }
+
+  .level-meter-bar {
+    height: 6px;
   }
 }

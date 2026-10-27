@@ -5,6 +5,7 @@
 
 /* --- TABLETS & SMALL LAPTOPS (max-width: 992px) --- */
 @media (max-width: 992px) {
+
   /* Navigation */
   .mobile-toggle {
     display: block;
@@ -41,12 +42,10 @@
   }
 
   .hero-banner-overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.92) 55%,
-      rgba(255, 255, 255, 0.65) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.92) 55%,
+        rgba(255, 255, 255, 0.65) 100%);
   }
 
   /* Product Grid */
@@ -144,38 +143,154 @@
 
 /* --- MOBILE SCREENS (max-width: 640px) --- */
 @media (max-width: 640px) {
+
   /* Hero Banner Mobile Adjustments */
   .hero-banner-frame {
-    min-height: 520px;
+    min-height: 500px;
+  }
+
+  .hero-banner-img {
+    object-position: 91% center;
+    opacity: 38.05;
   }
 
   .hero-banner-content-container {
-    padding-block: 3rem 2.5rem;
+    padding-block: 2.25rem 2rem;
   }
 
+  /* Translucent overlay so background merchandise & banner image are clearly visible */
   .hero-banner-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.93) 65%,
-      rgba(255, 255, 255, 0.8) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(255, 255, 255, 0.62) 45%,
+        rgba(255, 255, 255, 0.45) 80%,
+        rgba(255, 255, 255, 0.55) 100%);
   }
 
+  .hero-banner-title {
+    font-size: clamp(1.6rem, 5.2vw, 1.95rem);
+    line-height: 1.22;
+    margin-bottom: 0.75rem;
+    color: #0f172a;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-banner-title .gradient-text {
+    text-shadow: none !important;
+  }
+
+  .hero-banner-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 6.25rem;
+    color: #1e293b;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+  }
+
+  /* 2 Action Buttons placed side-by-side (1 row, 2 columns) */
   .hero-banner-actions {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
   }
 
   .hero-banner-actions .hero-btn {
     width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.84rem;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    gap: 4px;
+  }
+
+  .hero-banner-actions .hero-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* 3 Perks placed horizontally across the 3 positions */
+  .hero-banner-perks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(203, 213, 225, 0.8);
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .hero-perk-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 3px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.22;
+  }
+
+  .hero-perk-item svg {
+    width: 14px;
+    height: 14px;
+    stroke: #0d9488;
+    flex-shrink: 0;
+  }
+
+  .hero-perk-item span {
+    font-size: 0.72rem;
+    display: block;
     text-align: center;
   }
 
-  .hero-banner-perks {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
+  /* Shop & Stationery Hero 3 Feature Badges: Horizontal 1-row (3 columns) on Mobile */
+  .hero-feature-badges {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .hero-feature-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+  }
+
+  .feature-icon-box {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    border-radius: 9px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .feature-icon-box svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .feature-title {
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+  }
+
+  .feature-sub {
+    font-size: 0.68rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
   }
 
   .section-title {
@@ -214,17 +329,57 @@
     opacity: 0.55;
   }
 
+  /* Mobile Bottom Navigation Controls - Relocated below 3D stage to unclutter product cards */
+  .slider-nav-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 0.85rem;
+    position: relative;
+    z-index: 10;
+  }
+
   .slider-nav-btn {
-    width: 36px;
-    height: 36px;
+    position: static;
+    transform: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(13, 148, 136, 0.35);
+    color: var(--primary);
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
   }
 
-  .slider-nav-btn.prev-btn {
-    left: 8px;
-  }
-
+  .slider-nav-btn.prev-btn,
   .slider-nav-btn.next-btn {
-    right: 8px;
+    left: auto;
+    right: auto;
+  }
+
+  .slider-nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .slider-nav-btn:hover,
+  .slider-nav-btn:active {
+    background: linear-gradient(135deg, var(--accent) 0%, #0f766e 100%);
+    color: #ffffff;
+    border-color: #2dd4bf;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+  }
+
+  .slider-progress-bar {
+    margin-top: 0.85rem;
+  }
+
+  .slider-dots {
+    margin-top: 0.75rem;
   }
 
   .features-grid {
@@ -232,25 +387,100 @@
     gap: var(--space-md);
   }
 
+  .printable-section {
+    padding: 3.5rem 0;
+  }
+
   .printable-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .printable-card {
+    border-radius: 12px;
+  }
+
+  .printable-btn-wrap {
+    padding: 0.6rem 0.5rem 0.75rem;
+  }
+
+  .printable-action-btn {
+    padding: 0.5rem 0.65rem;
+    border-radius: 9px;
+    gap: 4px;
+  }
+
+  .printable-action-btn .action-btn-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .printable-action-btn .action-btn-arrow {
+    width: 24px;
+    height: 24px;
+    margin-left: 0.25rem;
+  }
+
+  .printable-action-btn .action-btn-arrow svg {
+    width: 13px;
+    height: 13px;
   }
 
   .product-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Process Section Buttons: Side-by-side (1 row, 2 columns) on mobile */
   .process-actions {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
     width: 100%;
   }
 
   .process-actions .btn {
     width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.88rem;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
   }
 
+  /* Footer Mobile Layout: Brand full-width, Quick Links & QR Code side-by-side, Contact Us full-width */
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.25rem;
+  }
+
+  .footer-grid .footer-col:nth-child(1),
+  .footer-grid .footer-col:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid .footer-col:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .footer-grid .footer-col:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 1rem;
+  }
+
+  .footer-qr-img {
+    width: 115px;
+    height: 115px;
+    max-width: 100%;
+  }
+
+  .footer-qr-wrap {
+    padding: 6px;
   }
 
   .footer-bottom {
@@ -263,8 +493,397 @@
     grid-template-columns: 1fr;
   }
 
-  .cart-table th, 
+  .cart-table th,
   .cart-table td {
     padding: var(--space-sm);
+  }
+
+  /* About Page - Level Meters Mobile Cards (Matching UI Mockup) */
+  .levels-meters-list {
+    gap: 0.85rem;
+  }
+
+  .level-meter-card {
+    padding: 0.95rem 1.15rem;
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    background: #ffffff;
+  }
+
+  .level-meter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .level-meter-name {
+    font-size: clamp(0.82rem, 3.8vw, 0.95rem);
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+  }
+
+  .level-meter-score {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: #0f172a;
+    padding: 0.22rem 0.6rem;
+    border-radius: 6px;
+    flex-shrink: 0;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .level-meter-bar {
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .level-meter-fill {
+    height: 100%;
+    background: #0d9488;
+    border-radius: 9999px;
+  }
+
+  /* Shop Toolbar: Breadcrumbs on left & Search bar on right side-by-side in one row */
+  .shop-toolbar {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    margin: 1.5rem 0 1.25rem !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+
+  .shop-breadcrumbs {
+    font-size: 0.84rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .shop-toolbar-controls {
+    width: auto !important;
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+
+  .shop-search-bar {
+    width: 100% !important;
+    max-width: 180px !important;
+    padding: 0.42rem 0.65rem !important;
+    border-radius: 10px !important;
+    gap: 6px !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  .shop-search-bar svg {
+    width: 15px !important;
+    height: 15px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .shop-search-bar input {
+    font-size: 0.78rem !important;
+    width: 100% !important;
+  }
+
+  /* Products in 1 row 2 columns (2-column grid on mobile) */
+  .modern-products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    margin-bottom: 3.5rem !important;
+  }
+
+  .modern-product-card {
+    border-radius: 14px !important;
+  }
+
+  .card-image-box {
+    padding: 1rem 0.65rem 0.75rem !important;
+    aspect-ratio: 1 / 0.95 !important;
+    min-height: 120px !important;
+  }
+
+  .card-img {
+    max-height: 110px !important;
+  }
+
+  .card-body {
+    padding: 0.75rem 0.45rem 0.85rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .card-title {
+    font-size: 0.78rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .card-enquiry-badge {
+    padding: 0.32rem 0.65rem !important;
+    font-size: 0.72rem !important;
+    gap: 4px !important;
+  }
+
+  /* Stationery Products in 2 columns */
+  .stationery-product-card {
+    padding: 0.75rem 0.5rem 0.7rem !important;
+    border-radius: 14px !important;
+  }
+
+  .stationery-card-image-stage {
+    aspect-ratio: 1 / 0.92 !important;
+    margin-bottom: 0.5rem !important;
+    border-radius: 10px !important;
+  }
+
+  .stationery-card-img {
+    max-height: 95px !important;
+  }
+
+  .stationery-card-title {
+    font-size: 0.74rem !important;
+  }
+
+  .stationery-enquiry-badge {
+    padding: 0.26rem 0.55rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* --- ULTRA-COMPACT MOBILE (max-width: 380px) --- */
+@media (max-width: 380px) {
+  .hero-banner-title {
+    font-size: 1.45rem;
+  }
+
+  .hero-banner-desc {
+    font-size: 0.82rem;
+  }
+
+  .hero-banner-actions {
+    gap: 0.45rem;
+  }
+
+  .hero-banner-actions .hero-btn {
+    padding: 0.65rem 0.35rem;
+    font-size: 0.78rem;
+  }
+
+  .hero-perk-item {
+    font-size: 0.66rem;
+  }
+
+  .hero-perk-item span {
+    font-size: 0.66rem;
+  }
+
+  .hero-perk-item svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Shop & Stationery Hero 3 Feature Badges on Ultra-Compact Mobile */
+  .hero-feature-badges {
+    gap: 0.32rem !important;
+  }
+
+  .hero-feature-item {
+    gap: 4px !important;
+  }
+
+  .feature-icon-box {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    border-radius: 7px !important;
+  }
+
+  .feature-icon-box svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .feature-title {
+    font-size: 0.68rem !important;
+  }
+
+  .feature-sub {
+    font-size: 0.6rem !important;
+  }
+
+  .printable-grid {
+    gap: 0.5rem;
+  }
+
+  .printable-btn-wrap {
+    padding: 0.45rem 0.35rem 0.55rem;
+  }
+
+  .printable-action-btn {
+    padding: 0.45rem 0.45rem;
+    border-radius: 7px;
+  }
+
+  .printable-action-btn .action-btn-text {
+    font-size: 0.74rem;
+  }
+
+  .printable-action-btn .action-btn-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .printable-action-btn .action-btn-arrow svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .slider-nav-controls {
+    gap: 12px;
+    margin-top: 0.65rem;
+  }
+
+  .slider-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-nav-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .slider-progress-bar {
+    margin-top: 0.65rem;
+  }
+
+  .slider-dots {
+    margin-top: 0.55rem;
+  }
+
+  .process-actions {
+    gap: 0.5rem;
+  }
+
+  .process-actions .btn {
+    padding: 0.65rem 0.35rem;
+    font-size: 0.78rem;
+  }
+
+  .footer-grid {
+    gap: 1.75rem 0.85rem;
+  }
+
+  .footer-qr-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* About Page - Ultra-Compact Level Meters */
+  .levels-meters-list {
+    gap: 0.7rem;
+  }
+
+  .level-meter-card {
+    padding: 0.8rem 0.95rem;
+    border-radius: 14px;
+  }
+
+  .level-meter-name {
+    font-size: 0.78rem;
+  }
+
+  .level-meter-score {
+    font-size: 0.74rem;
+    padding: 0.18rem 0.45rem;
+  }
+
+  .level-meter-bar {
+    height: 6px;
+  }
+
+  /* Ultra-compact Shop Toolbar & 2-column Products Grid */
+  .shop-toolbar {
+    gap: 0.45rem !important;
+    margin: 1.25rem 0 1rem !important;
+  }
+
+  .shop-breadcrumbs {
+    font-size: 0.78rem !important;
+  }
+
+  .shop-search-bar {
+    max-width: 155px !important;
+    padding: 0.35rem 0.5rem !important;
+    gap: 5px !important;
+  }
+
+  .shop-search-bar svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .shop-search-bar input {
+    font-size: 0.74rem !important;
+  }
+
+  .modern-products-grid {
+    gap: 0.5rem !important;
+    margin-bottom: 2.75rem !important;
+  }
+
+  .card-image-box {
+    padding: 0.75rem 0.45rem 0.55rem !important;
+    min-height: 105px !important;
+  }
+
+  .card-img {
+    max-height: 95px !important;
+  }
+
+  .card-body {
+    padding: 0.65rem 0.35rem 0.75rem !important;
+    gap: 0.35rem !important;
+  }
+
+  .card-title {
+    font-size: 0.72rem !important;
+  }
+
+  .card-enquiry-badge {
+    padding: 0.28rem 0.55rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  .stationery-product-card {
+    padding: 0.65rem 0.45rem 0.6rem !important;
+  }
+
+  .stationery-card-img {
+    max-height: 85px !important;
+  }
+
+  .stationery-card-title {
+    font-size: 0.7rem !important;
+  }
+
+  .stationery-enquiry-badge {
+    padding: 0.24rem 0.45rem !important;
+    font-size: 0.66rem !important;
   }
 }

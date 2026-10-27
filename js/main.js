@@ -108,12 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Direct card click: Clicking either the left or right card smoothly brings it to center
+    // Direct card click: Clicking either the left or right card smoothly brings it to center; clicking active card redirects to Our Products
     cards.forEach((card, index) => {
       card.addEventListener('click', () => {
         if (index !== activeIndex) {
           updateCards(index);
           startAutoScroll();
+        } else {
+          window.location.href = 'shop.html';
         }
       });
     });

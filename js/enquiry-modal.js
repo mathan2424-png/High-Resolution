@@ -487,8 +487,8 @@
       });
     }
 
-    // Bind all product cards across shop, stationery, and index
-    const cardSelectors = '.stationery-product-card, .shop-product-card, .modern-product-card, .printable-card, [data-enquiry-card]';
+    // Bind product cards across shop and stationery
+    const cardSelectors = '.stationery-product-card, .shop-product-card, .modern-product-card, [data-enquiry-card]';
     document.querySelectorAll(cardSelectors).forEach((card) => {
       card.style.cursor = 'pointer';
       card.addEventListener('click', (e) => {

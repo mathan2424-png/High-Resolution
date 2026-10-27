@@ -9,11 +9,11 @@
     content="HRT is India's pioneer in mass customisation. Custom printed corporate merchandise, apparel, promotional gifts, laptop bags, power banks, engraved pens, and stationery.">
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/footer.css?v=9">
   <link rel="stylesheet" href="css/enquiry-modal.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/responsive.css?v=9">
 </head>
 
 <body>
@@ -213,18 +213,20 @@
         </div>
 
         <!-- Glassmorphic Previous & Next Arrows -->
-        <button class="slider-nav-btn prev-btn" id="sliderPrevBtn" aria-label="Previous Slide">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <button class="slider-nav-btn next-btn" id="sliderNextBtn" aria-label="Next Slide">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+        <div class="slider-nav-controls">
+          <button class="slider-nav-btn prev-btn" id="sliderPrevBtn" aria-label="Previous Slide">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="slider-nav-btn next-btn" id="sliderNextBtn" aria-label="Next Slide">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
 
         <!-- Progress Indicator Bar -->
         <div class="slider-progress-bar">
@@ -252,13 +254,12 @@
 
       <div class="printable-grid">
         <!-- Product 1: Calculator -->
-        <article class="printable-card" data-name="Calculator" data-img="images/products/calculater.png"
-          title="Click to enquire for Calculator">
+        <a href="shop.html" class="printable-card" title="View Our Products - Calculator">
           <div class="printable-thumb">
             <img src="images/products/calculater.png" alt="Calculator">
           </div>
           <div class="printable-btn-wrap">
-            <button type="button" class="printable-action-btn" aria-label="Enquire about Calculator">
+            <div class="printable-action-btn">
               <span class="action-btn-text">Calculator</span>
               <span class="action-btn-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -267,18 +268,17 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
-            </button>
+            </div>
           </div>
-        </article>
+        </a>
 
         <!-- Product 2: Pen Drive -->
-        <article class="printable-card" data-name="Pen Drive" data-img="images/products/pendrive.png"
-          title="Click to enquire for Pen Drive">
+        <a href="shop.html" class="printable-card" title="View Our Products - Pen Drive">
           <div class="printable-thumb">
             <img src="images/products/pendrive.png" alt="Pen Drive">
           </div>
           <div class="printable-btn-wrap">
-            <button type="button" class="printable-action-btn" aria-label="Enquire about Pen Drive">
+            <div class="printable-action-btn">
               <span class="action-btn-text">Pen Drive</span>
               <span class="action-btn-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -287,18 +287,17 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
-            </button>
+            </div>
           </div>
-        </article>
+        </a>
 
         <!-- Product 3: Bags -->
-        <article class="printable-card" data-name="Bags" data-img="images/products/bag.png"
-          title="Click to enquire for Bags">
+        <a href="shop.html" class="printable-card" title="View Our Products - Bags">
           <div class="printable-thumb">
             <img src="images/products/bag.png" alt="Bags">
           </div>
           <div class="printable-btn-wrap">
-            <button type="button" class="printable-action-btn" aria-label="Enquire about Bags">
+            <div class="printable-action-btn">
               <span class="action-btn-text">Bags</span>
               <span class="action-btn-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -307,18 +306,17 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
-            </button>
+            </div>
           </div>
-        </article>
+        </a>
 
         <!-- Product 4: Mugs -->
-        <article class="printable-card" data-name="Mugs" data-img="images/products/mugs.png"
-          title="Click to enquire for Mugs">
+        <a href="shop.html" class="printable-card" title="View Our Products - Mugs">
           <div class="printable-thumb">
             <img src="images/products/mugs.png" alt="Mugs">
           </div>
           <div class="printable-btn-wrap">
-            <button type="button" class="printable-action-btn" aria-label="Enquire about Mugs">
+            <div class="printable-action-btn">
               <span class="action-btn-text">Mugs</span>
               <span class="action-btn-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -327,18 +325,17 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
-            </button>
+            </div>
           </div>
-        </article>
+        </a>
 
         <!-- Product 5: Power Bank -->
-        <article class="printable-card" data-name="Power Bank" data-img="images/products/powerbank.png"
-          title="Click to enquire for Power Bank">
+        <a href="shop.html" class="printable-card" title="View Our Products - Power Bank">
           <div class="printable-thumb">
             <img src="images/products/powerbank.png" alt="Power Bank">
           </div>
           <div class="printable-btn-wrap">
-            <button type="button" class="printable-action-btn" aria-label="Enquire about Power Bank">
+            <div class="printable-action-btn">
               <span class="action-btn-text">Power Bank</span>
               <span class="action-btn-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -347,18 +344,17 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
-            </button>
+            </div>
           </div>
-        </article>
+        </a>
 
         <!-- Product 6: Pens -->
-        <article class="printable-card" data-name="Pens" data-img="images/products/pen.png"
-          title="Click to enquire for Pens">
+        <a href="shop.html" class="printable-card" title="View Our Products - Pens">
           <div class="printable-thumb">
             <img src="images/products/pen.png" alt="Pens">
           </div>
           <div class="printable-btn-wrap">
-            <button type="button" class="printable-action-btn" aria-label="Enquire about Pens">
+            <div class="printable-action-btn">
               <span class="action-btn-text">Pens</span>
               <span class="action-btn-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -367,9 +363,9 @@
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
-            </button>
+            </div>
           </div>
-        </article>
+        </a>
       </div>
 
       <div class="text-center" style="margin-top: 3.5rem;">
@@ -519,18 +515,14 @@
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
         <p>&copy; 2026 High Resolution Technologies. All rights reserved.</p>
-        <div class="footer-legal-links">
-          <a href="#">Privacy Policy</a>
-          <span>|</span>
-          <a href="#">Terms &amp; Conditions</a>
-        </div>
+       
       </div>
     </div>
   </footer>
 
   <!-- Main JavaScript Files -->
-  <script src="js/main.js"></script>
-  <script src="js/enquiry-modal.js"></script>
+  <script src="js/main.js?v=6"></script>
+  <script src="js/enquiry-modal.js?v=6"></script>
 </body>
 
 </html>
